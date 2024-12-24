@@ -15,7 +15,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TMessageForm, MessageForm);
-  Application.CreateForm(TObjectDebuggerFMXForm, ObjectDebuggerFMXForm1);
+  Application.CreateForm(TObjectDebuggerFMXForm, ObjectDebuggerFMXForm1); //TODO: is this needed?
   Application.Run;
 
 end.

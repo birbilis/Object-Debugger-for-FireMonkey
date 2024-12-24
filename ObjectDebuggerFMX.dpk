@@ -28,13 +28,12 @@ package ObjectDebuggerFMX;
 {$DESCRIPTION 'Object Debugger for FireMonkey'}
 {$IMPLICITBUILD ON}
 
-
 requires
   rtl,
   fmx;
 
 contains
-  ObjectDebuggerFMXFrame in 'ObjectDebuggerFMXFrame.pas' {FMXObjectDebuggerFrame} ,
+  ObjectDebuggerFMXFrame in 'ObjectDebuggerFMXFrame.pas' {FMXObjectDebuggerFrame},
   FormMessage in 'FormMessage.pas';
 
 end.

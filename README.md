@@ -1,4 +1,4 @@
-# Object-Debugger-for-FireMonkey
+﻿# Object-Debugger-for-FireMonkey
 A run-time object inspector for Delphi FireMonkey applications
 
 README
@@ -7,17 +7,19 @@ The FMX ObjectDebugger is a run-time Object Inspector for Delphi FireMonkey appl
 
 Licensed under MPL 2.0, https://www.mozilla.org/en-US/MPL/2.0/ .
 
-Copyright (c) 2016 Daniel Horn
+Copyright (c) Daniel Horn (FMX port), George Birbilis (FMX update)
 
+Developed with Delphi/RAD Studio 10 Seattle (FMX port) and Delphi 11/12 (FMX update)
 
-Developed with Delphi/RAD Studio 10 Seattle.
 Based on version 5.0 of the (VCL) Object Debugger for Delphi by Marco Cantù:
         http://blog.marcocantu.com/blog/2016-february-objectdebugger-delphi10seattle.html
 
+Note there was a 5.51 updated VCL version for Delphi 10.4.2 released later on by Marco (haven't yet checked/incorporated any changes it may have had):
+        https://blog.marcocantu.com/blog/2021-august-delphi-objectdebugger-updated.html
 
 WHAT'S HERE
 
-The projects included in this project group are:
+The projects included in the ObjectDebuggerFMX project group are:
 
 
 DemoMobile - A simple demo program that uses the component.  This shows how you might use the component in an Android or iOS app though it will also run on Windows and Mac OS X.
@@ -28,6 +30,7 @@ DemoDesktop - Similar to DemoMobile but intended for Windows and Mac because the
 ObjectDebuggerFMXTest - If you intend to modify the component, this project is a simple way of building and running the ObjectDebuggerFMXFrame class directly
 in an app (this is a way of avoiding any install/uninstall issues that may come up while changing the code).
 
+ObjectDebuggerFMX - An installable Delphi package (also including Boss package manager metadata)
 
 INSTRUCTIONS
 

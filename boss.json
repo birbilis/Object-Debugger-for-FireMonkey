@@ -1,0 +1,30 @@
+{
+    "name": "Object-Debugger-for-Firemonkey",
+    "version": "6.0",
+
+    "description": "Object Debugger for Delphi Firemonkey (FMX)",
+
+    "author": "Marco Cantu (original VCL), Daniel Horn (FMX port), George Birbilis (updates to FMX port)",
+    "license": "MIT",
+
+    "dependencies": {},
+
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Birbilis/Object-Debugger-for-Firemonkey"
+    },
+
+    "main": "ObjectDebuggerFMX.dproj",
+
+    "projects": [
+      "ObjectDebuggerFMX.dproj",
+      "Test/ObjectDebuggerFMXTest.dproj",
+      "DemoDesktop/DemoDesktop.dproj",
+      "DemoMobile/DemoMobile.dproj"
+    ],
+
+    "files": [
+      "**/*.pas"
+    ]
+}
+

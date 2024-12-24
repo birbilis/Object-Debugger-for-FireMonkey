@@ -13,6 +13,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TMessageForm, MessageForm);
-  Application.CreateForm(TFMXObjectDebuggerFrame, FMXObjectDebuggerFrame);
+  Application.CreateForm(TFMXObjectDebuggerFrame, FMXObjectDebuggerFrame); //TODO: is this needed?
   Application.Run;
 end.

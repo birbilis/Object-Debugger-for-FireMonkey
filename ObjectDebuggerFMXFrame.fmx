@@ -52,8 +52,9 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = True
-        Size.Width = 0.000000000000000000
+        Size.Width = 74.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
@@ -142,12 +143,14 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
           OnHeaderClick = sgPropHeaderClick
           OnSelectCell = sgPropSelectCell
           OnResize = sgPropResize
-          Viewport.Width = 316.000000000000000000
-          Viewport.Height = 511.000000000000000000
+          Viewport.Width = 296.000000000000000000
+          Viewport.Height = 486.000000000000000000
           object StringColumn1: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
           object StringColumn2: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
         end
@@ -156,8 +159,9 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = False
-        Size.Width = 0.000000000000000000
+        Size.Width = 55.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
@@ -182,9 +186,11 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
           Viewport.Width = 316.000000000000000000
           Viewport.Height = 511.000000000000000000
           object StringColumn3: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
           object StringColumn5: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
         end
@@ -193,8 +199,9 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = False
-        Size.Width = 0.000000000000000000
+        Size.Width = 45.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
@@ -219,9 +226,11 @@ object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
           Viewport.Width = 316.000000000000000000
           Viewport.Height = 511.000000000000000000
           object StringColumn4: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
           object StringColumn6: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
             Size.Width = 145.000000000000000000
           end
         end

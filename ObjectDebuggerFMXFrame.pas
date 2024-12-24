@@ -1,10 +1,10 @@
-unit ObjectDebuggerFMXFrame;
+﻿unit ObjectDebuggerFMXFrame;
 
 {*******************************
   {    Delphi ObjectDebugger - FMX  Version
   {    MPL 2.0 License
-  {    Copyright 2016 Daniel Horn
-  {    dph@softwarecraftsman.org
+  {    Copyright 2016 Daniel Horn, 2022-2024 George Birbilis
+  {    dph[@]softwarecraftsman.org, birbilis[@]zoomicon.com
   { *******************************}
 {
   NOTES
@@ -88,16 +88,41 @@ unit ObjectDebuggerFMXFrame;
 
 interface
 
+{$region 'Used units'}
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.ListBox,
-  System.Rtti, FMX.Grid, FMX.Layouts, FMX.TabControl, FMX.Menus //
-    , FMX.Controls.Presentation, FMX.Edit, FMX.ComboEdit,
-  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.ListView, FMX.ScrollBox, FMX.Ani, FMX.Memo, FMX.Grid.Style, System.Actions, FMX.ActnList //
-    , FMX.StdCtrls // TPanel
-    , System.TypInfo //TPropList, PPropInfo
-    ;
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  System.Rtti,
+  System.TypInfo, //for TPropList, PPropInfo
+  System.Actions,
+  //
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.ListBox,
+  FMX.Grid,
+  FMX.Layouts,
+  FMX.TabControl,
+  FMX.Menus,
+  FMX.Controls.Presentation,
+  FMX.Edit,
+  FMX.ComboEdit,
+  FMX.ListView.Types,
+  FMX.ListView.Appearances,
+  FMX.ListView.Adapters.Base,
+  FMX.ListView,
+  FMX.ScrollBox,
+  FMX.Ani,
+  FMX.Memo,
+  FMX.Grid.Style,
+  FMX.ActnList,
+  FMX.StdCtrls; //for TPanel
+{$endregion}
 
 type
   TSGObjects = array [0 .. 2] of array of Pointer;
@@ -142,8 +167,7 @@ type
     procedure cbCompsChange(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure sgPropDblClick(Sender: TObject);
-    procedure sgPropSelectCell(Sender: TObject; const ACol, ARow: Integer;
-      var CanSelect: Boolean);
+    procedure sgPropSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
     procedure MenuItemRefreshFormsClick(Sender: TObject);
     procedure MenuItemRefreshComponentsClick(Sender: TObject);
     procedure ListSetClick(Sender: TObject);
@@ -161,21 +185,16 @@ type
     procedure MenuItemAboutClick(Sender: TObject);
     procedure MenuItemRefreshValuesClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure EditNumKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
-      Shift: TShiftState);
-    procedure sgDataSelectCell(Sender: TObject; const ACol, ARow: Integer;
-      var CanSelect: Boolean);
+    procedure EditNumKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
+    procedure sgDataSelectCell(Sender: TObject; const ACol, ARow: Integer; var CanSelect: Boolean);
     procedure sgPropResize(Sender: TObject);
     procedure sgResize(Sender: TObject);
-    procedure FrameMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
+    procedure FrameMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure MenuItemVisibleClick(Sender: TObject);
     procedure sgPropHeaderClick(Column: TColumn);
     procedure sgEvtHeaderClick(Column: TColumn);
     procedure sgDataHeaderClick(Column: TColumn);
-    procedure sgPropViewportPositionChange(Sender: TObject;
-      const OldViewportPosition, NewViewportPosition: TPointF;
-      const ContentSizeChanged: Boolean);
+    procedure sgPropViewportPositionChange(Sender: TObject; const OldViewportPosition, NewViewportPosition: TPointF; const ContentSizeChanged: Boolean);
     procedure sgPropTap(Sender: TObject; const Point: TPointF);
   private
     {Private declarations}
@@ -227,28 +246,30 @@ type
     property ClientHeight: Single read GetHeight; //TODO: return something else?
   
   published
+    {Published declarations}
     property Copyright: string read FCopyright;
     property Anchors; // Make Anchors property visible.
   end;
 
 var
-  FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame;
+  FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame; //TODO: should try to get rid of this (but need to update demos)
+
+procedure Register;
 
 implementation
 
 {$R *.fmx}
 
 uses
-  System.Math // IntPower
-    , System.UIConsts // ColorToString
-    , FMX.Platform // TPlatformServices
-    , FormMessage // MessageForm
-    ;
+  System.Math, //for IntPower
+  System.UIConsts, //for ColorToString
+  FMX.Platform, //for TPlatformServices
+  FormMessage; //for MessageForm
 
 const
-  VersionDescription = 'Object Debugger for Delphi 10 Seattle - FMX Version';
-  VersionRelease = 'Release 5.50';
-  CopyrightString = 'Copyright (c) 2016 Daniel Horn';
+  VersionDescription = 'Object Debugger for Delphi - FMX Version';
+  VersionRelease = 'Release 6.0';
+  CopyrightString = 'Copyright (c) Daniel Horn (FMX port), George Birbilis (FMX update)';
 
 type
   // TypeInfo does not work for enum unless it starts at 0 and increases.
@@ -723,7 +744,7 @@ begin
     + #13
     + CopyrightString
     + #13#13
-    + 'Based on version 5.0 of the (VCL) Object Debugger for Delphi by Marco Cant�'
+    + 'Based on version 5.0 of the (VCL) Object Debugger for Delphi by Marco Cantù' //TODO: there's version 5.51 at https://github.com/marcocantu/ObjectDebugger/blob/master/ObjectDebuggerForm.pas, should check what changed between 5.0 and 5.51 (it was updated to Delphi 10.4.2 says 1Aug2021 article: https://blog.marcocantu.com/blog/2021-august-delphi-objectdebugger-updated.html while previous 24Feb2016 article said it had been updated for Delphi 10 Seattle: https://blog.marcocantu.com/blog/2016-february-objectdebugger-delphi10seattle.html)
     + #13#13 +
     'Usage: Select the form and component you are interested in ' +
     '(the form is also listed among its components); the grid will display ' +
@@ -1771,6 +1792,7 @@ begin
   FreeAndNil(Lines); //change by birbilis to avoid memory leak (untested)
 end;
 
+{$region 'Commented out'}
 {$IFDEF OLD}  // Code snippets that had something useful or that may need to be revisited.
 
 // Use MouseUp instead of MouseDown event here because ShowMessage call is made from ShowRttiDetail.
@@ -1829,5 +1851,25 @@ begin
 end;
 
 {$ENDIF}
+{$endregion}
+
+{$region 'Registration'}
+
+procedure RegisterClasses;
+begin
+  RegisterFmxClasses([TFMXObjectDebuggerFrame]); //register for persistence (in case they're used standalone)
+end;
+
+procedure Register;
+begin
+  GroupDescendentsWith(TFMXObjectDebuggerFrame, TControl);
+  RegisterClasses;
+  RegisterComponents('Zoomicon', [TFMXObjectDebuggerFrame]);
+end;
+
+{$endregion}
+
+initialization
+  RegisterClasses; //don't call Register here, it's called by the IDE automatically on a package installation (fails at runtime)
 
 end.

@@ -68,6 +68,7 @@ begin
     Self.caption := caption;
 
     AddPanel(P);
+
     Memo1 := TMemo.Create(P);
     with Memo1 do
     begin
@@ -82,6 +83,7 @@ begin
       Anchors := [TAnchorKind.akTop, TAnchorKind.akBottom, TAnchorKind.akLeft, TAnchorKind.akRight];
       Lines.Text := str;
     end;
+
     // Plain old ShowModal not supported on Android so use newer version with support for callback.
     Self.ShowModal(
       procedure(ModalResult: TModalResult)
@@ -89,7 +91,7 @@ begin
         Self.Visible := False;
       end);
   finally
-
+    //TODO: is this needed to cleanup something? Cleanup should probably be done at the modal's callback or posted to main thread's message queue
   end;
 end;
 

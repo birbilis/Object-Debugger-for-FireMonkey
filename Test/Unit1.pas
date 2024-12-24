@@ -36,7 +36,7 @@ uses
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  // TODO In iOS, need to find someone of keeping debug form on top or of bringing it back to the top.
+  // TODO In iOS, need to find some way of keeping debug form on top or of bringing it back to the top.
   FMXObjectDebuggerFrame.Visible := True;
   FMXObjectDebuggerFrame.BringToFront;
 end;
