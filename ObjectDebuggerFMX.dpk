@@ -33,7 +33,8 @@ requires
   fmx;
 
 contains
+  FormMessage in 'FormMessage.pas',
   ObjectDebuggerFMXFrame in 'ObjectDebuggerFMXFrame.pas' {FMXObjectDebuggerFrame},
-  FormMessage in 'FormMessage.pas';
+  ObjectDebuggerFMXForm in 'ObjectDebuggerFMXForm.pas' {ObjectDebuggerFMXForm};
 
 end.

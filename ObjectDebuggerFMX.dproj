@@ -200,6 +200,10 @@
             <Form>FMXObjectDebuggerFrame</Form>
         </DCCReference>
         <DCCReference Include="FormMessage.pas"/>
+        <DCCReference Include="ObjectDebuggerFMXForm.pas">
+            <Form>ObjectDebuggerFMXForm</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <None Include="boss.json"/>
         <None Include="LICENSE.txt"/>
         <None Include="README.md"/>
