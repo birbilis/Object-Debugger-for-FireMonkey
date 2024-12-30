@@ -196,10 +196,10 @@
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="fmx.dcp"/>
+        <DCCReference Include="FormMessage.pas"/>
         <DCCReference Include="ObjectDebuggerFMXFrame.pas">
             <Form>FMXObjectDebuggerFrame</Form>
         </DCCReference>
-        <DCCReference Include="FormMessage.pas"/>
         <DCCReference Include="ObjectDebuggerFMXForm.pas">
             <Form>ObjectDebuggerFMXForm</Form>
             <FormType>fmx</FormType>
