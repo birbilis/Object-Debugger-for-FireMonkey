@@ -69,4 +69,134 @@
         <CallTarget Targets="DemoDesktop:Make;DemoMobile:Make;ObjectDebuggerFMXTest:Make;ObjectDebuggerFMX:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Android'">
+        <BuildGroupProject Include="Test\ObjectDebuggerFMXTest.dproj">
+            <ProjectGuid>{716709C9-983E-4F34-A90D-22F6C0913FF0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ObjectDebuggerFMX.dproj">
+            <ProjectGuid>{CF593233-C314-4EAD-8CF5-4BAC87F3C353}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoDesktop\DemoDesktop.dproj">
+            <ProjectGuid>{C3009D3D-BF69-47EF-8FF2-6788DDAAB9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoMobile\DemoMobile.dproj">
+            <ProjectGuid>{DF2CB027-E033-45FE-B869-D6E97B757DEC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='macOS'">
+        <BuildGroupProject Include="Test\ObjectDebuggerFMXTest.dproj">
+            <ProjectGuid>{716709C9-983E-4F34-A90D-22F6C0913FF0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>OSX64;OSXARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ObjectDebuggerFMX.dproj">
+            <ProjectGuid>{CF593233-C314-4EAD-8CF5-4BAC87F3C353}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>OSX64;OSXARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoDesktop\DemoDesktop.dproj">
+            <ProjectGuid>{C3009D3D-BF69-47EF-8FF2-6788DDAAB9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>OSX64;OSXARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoMobile\DemoMobile.dproj">
+            <ProjectGuid>{DF2CB027-E033-45FE-B869-D6E97B757DEC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>OSX64;OSXARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Platforms'">
+        <BuildGroupProject Include="Test\ObjectDebuggerFMXTest.dproj">
+            <ProjectGuid>{716709C9-983E-4F34-A90D-22F6C0913FF0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64;iOSDevice64;iOSSimARM64;OSX64;OSXARM64;Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ObjectDebuggerFMX.dproj">
+            <ProjectGuid>{CF593233-C314-4EAD-8CF5-4BAC87F3C353}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64;iOSDevice64;iOSSimARM64;OSX64;OSXARM64;Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoDesktop\DemoDesktop.dproj">
+            <ProjectGuid>{C3009D3D-BF69-47EF-8FF2-6788DDAAB9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64;iOSDevice64;iOSSimARM64;OSX64;OSXARM64;Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoMobile\DemoMobile.dproj">
+            <ProjectGuid>{DF2CB027-E033-45FE-B869-D6E97B757DEC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Android64;iOSDevice64;iOSSimARM64;OSX64;OSXARM64;Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='iOS'">
+        <BuildGroupProject Include="Test\ObjectDebuggerFMXTest.dproj">
+            <ProjectGuid>{716709C9-983E-4F34-A90D-22F6C0913FF0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ObjectDebuggerFMX.dproj">
+            <ProjectGuid>{CF593233-C314-4EAD-8CF5-4BAC87F3C353}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoDesktop\DemoDesktop.dproj">
+            <ProjectGuid>{C3009D3D-BF69-47EF-8FF2-6788DDAAB9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoMobile\DemoMobile.dproj">
+            <ProjectGuid>{DF2CB027-E033-45FE-B869-D6E97B757DEC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Windows'">
+        <BuildGroupProject Include="Test\ObjectDebuggerFMXTest.dproj">
+            <ProjectGuid>{716709C9-983E-4F34-A90D-22F6C0913FF0}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="ObjectDebuggerFMX.dproj">
+            <ProjectGuid>{CF593233-C314-4EAD-8CF5-4BAC87F3C353}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoDesktop\DemoDesktop.dproj">
+            <ProjectGuid>{C3009D3D-BF69-47EF-8FF2-6788DDAAB9BA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="DemoMobile\DemoMobile.dproj">
+            <ProjectGuid>{DF2CB027-E033-45FE-B869-D6E97B757DEC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
 </Project>

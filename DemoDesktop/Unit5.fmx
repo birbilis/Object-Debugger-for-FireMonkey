@@ -10,12 +10,12 @@ object Form5: TForm5
   OnShow = FormShow
   DesignerMasterStyle = 0
   object Edit1: TEdit
+    Hint = 'Use the inspector to alter the '#39'Text'#39' property.'
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 1
     Position.X = 16.000000000000000000
     Position.Y = 205.000000000000000000
-    Hint = 'Use the inspector to alter the '#39'Text'#39' property.'
     Size.Width = 524.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -23,8 +23,8 @@ object Form5: TForm5
     ShowHint = True
   end
   object ComboBox1: TComboBox
-    Anchors = [akLeft, akTop, akRight]
     Hint = 'A TComboBox object'
+    Anchors = [akLeft, akTop, akRight]
     Items.Strings = (
       'Item 0'
       'Item 1'
@@ -43,16 +43,14 @@ object Form5: TForm5
     ShowHint = True
   end
   object ListBox1: TListBox
-    Anchors = [akLeft, akTop, akRight]
     Hint = 'A TListBox object'
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 16.000000000000000000
     Position.Y = 240.000000000000000000
     Size.Width = 524.000000000000000000
     Size.Height = 129.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    ParentShowHint = False
-    ShowHint = True
     DisableFocusEffect = True
     Items.Strings = (
       'Item 0'
@@ -62,6 +60,8 @@ object Form5: TForm5
     DefaultItemStyles.ItemStyle = ''
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
+    ParentShowHint = False
+    ShowHint = True
     Viewport.Width = 520.000000000000000000
     Viewport.Height = 125.000000000000000000
   end
@@ -98,9 +98,9 @@ object Form5: TForm5
     Viewport.Height = 181.000000000000000000
   end
   object ColorPanel1: TColorPanel
+    Hint = 'A TColorPanel object'
     Anchors = [akLeft, akTop, akRight, akBottom]
     Color = claWhite
-    Hint = 'A TColorPanel object'
     Position.X = 16.000000000000000000
     Position.Y = 456.000000000000000000
     Size.Width = 524.000000000000000000
@@ -109,9 +109,9 @@ object Form5: TForm5
     TabOrder = 5
   end
   object ComboColorBox1: TComboColorBox
+    Hint = 'A TComboColorBox object'
     Anchors = [akLeft, akTop, akRight]
     Color = claSteelblue
-    Hint = 'A TComboColorBox object'
     Position.X = 16.000000000000000000
     Position.Y = 424.000000000000000000
     Size.Width = 524.000000000000000000
